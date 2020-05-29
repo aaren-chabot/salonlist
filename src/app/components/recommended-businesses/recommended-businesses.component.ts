@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommended-businesses.component.scss']
 })
 export class RecommendedBusinessesComponent implements OnInit {
+  suggestion: 'popularity';
+  sectionTitle: 'Most popular';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

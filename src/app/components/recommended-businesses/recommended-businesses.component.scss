@@ -1,0 +1,17 @@
+.recommended-businesses {
+  margin-bottom: 48px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  app-business-card:not(:last-of-type) {
+    margin-right: 24px;
+  }
+}
