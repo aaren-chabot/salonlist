@@ -1,0 +1,96 @@
+.business-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.image-container {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.featured {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 4px 6px;
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
+  background: #fff;
+  border-radius: 4px;
+  display: none;
+
+  &.true {
+    display: block;
+  }
+}
+
+.business-reviews {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.reviews-backing {
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.star-rating {
+  position: relative;
+  z-index: 2;
+  padding: 3px;
+  color: gold;
+  font-size: 20px;
+  letter-spacing: 2px;
+
+  & .full:after {
+    content: '\2605';
+    color: gold;
+    position: absolute;
+    margin-left: -22px;
+    width: 20px;
+    overflow: hidden;
+  }
+  & .half:after {
+    content: '★';
+    color: gold;
+    position: absolute;
+    margin-left: -22px;
+    width: 10px;
+    overflow: hidden;
+  }
+}
+
+.content-container {
+  padding: 12px 16px 16px;
+}
+
+.business-name {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.business-address {
+  color: rgb(113, 113, 113);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}

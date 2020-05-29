@@ -1,1 +1,54 @@
-<p>business-card works!</p>
+<div class="business-card">
+  <a [routerLink]="business.link">
+    <div class="image-container">
+      <div class="featured" [ngClass]="{ true: business.isFeatured }">
+        FEATURED
+      </div>
+      <div class="business-reviews">
+        <div class="reviews-backing"></div>
+        <div class="star-rating">
+          <span
+            [ngClass]="{
+              half: business.rating == 0.5,
+              full: business.rating >= 1
+            }"
+            >&#9734;</span
+          >
+          <span
+            [ngClass]="{
+              half: business.rating == 1.5,
+              full: business.rating >= 2
+            }"
+            >&#9734;</span
+          >
+          <span
+            [ngClass]="{
+              half: business.rating == 2.5,
+              full: business.rating >= 3
+            }"
+            >&#9734;</span
+          >
+          <span
+            [ngClass]="{
+              half: business.rating == 3.5,
+              full: business.rating >= 4
+            }"
+            >&#9734;</span
+          >
+          <span
+            [ngClass]="{
+              half: business.rating == 4.5,
+              full: business.rating >= 5
+            }"
+            >&#9734;</span
+          >
+        </div>
+      </div>
+      <img src="https://placeimg.com/450/300/arch" alt="Picture of business" />
+    </div>
+    <div class="content-container">
+      <h3 class="business-name">{{ business.name }}</h3>
+      <span class="business-address">{{ business.address }}</span>
+    </div>
+  </a>
+</div>
