@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-carousel.component.scss']
 })
 export class HeroCarouselComponent implements OnInit {
+  config = {
+    showNavigationArrows: false,
+    showNavigationIndicators: false,
+    interval: 400
+  };
+  images = [944, 1011, 984].map(
+    (n) => `https://picsum.photos/id/${n}/2000/500`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
