@@ -12,6 +12,7 @@ import { BusinessCardComponent } from './components/business-card/business-card.
 import { RecommendedBusinessesComponent } from './components/recommended-businesses/recommended-businesses.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
@@ -26,7 +27,13 @@ import { IconComponent } from './components/icon/icon.component';
     HeroCarouselComponent,
     IconComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    FontAwesomeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
