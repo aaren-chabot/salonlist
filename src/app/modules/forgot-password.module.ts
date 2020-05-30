@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ForgotPasswordComponent } from '@pages/forgot-password/forgot-password.component';
+import { ForgotPasswordPageComponent } from '@pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ForgotPasswordComponent
+    component: ForgotPasswordPageComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  declarations: [ForgotPasswordComponent],
+  declarations: [ForgotPasswordPageComponent],
   exports: [RouterModule]
 })
 export class ForgotPasswordModule {}

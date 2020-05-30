@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-barbers',
+  selector: 'app-barbers-page',
   templateUrl: './barbers.component.html',
   styleUrls: ['./barbers.component.scss']
 })
-export class BarbersComponent implements OnInit {
+export class BarbersPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

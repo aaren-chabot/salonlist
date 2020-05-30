@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SalonsComponent } from '@pages/salons/salons.component';
-import { SalonComponent } from '@pages/salon/salon.component';
+import { SalonsPageComponent } from '@pages/salons/salons.component';
+import { SalonPageComponent } from '@pages/salon/salon.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: SalonsComponent
+    component: SalonsPageComponent
   },
   {
     path: ':id',
-    component: SalonComponent
+    component: SalonPageComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  declarations: [SalonsComponent, SalonComponent],
+  declarations: [SalonsPageComponent, SalonPageComponent],
   exports: [RouterModule]
 })
 export class SalonsModule {}
