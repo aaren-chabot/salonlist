@@ -32,6 +32,11 @@ const routes: Routes = [
       import('@modules/search.module').then((m) => m.SearchModule)
   },
   {
+    path: 'business',
+    loadChildren: () =>
+      import('@modules/business.module').then((m) => m.BusinessModule)
+  },
+  {
     path: 'barbers',
     loadChildren: () =>
       import('@modules/barbers.module').then((m) => m.BarbersModule)
