@@ -1,3 +1,11 @@
 <div class="search">
-  <input type="text" placeholder="You location..." />
+  <form #f="ngForm" (ngSubmit)="handleSubmit(f)">
+    <input
+      ngModel
+      minlength="1"
+      name="search"
+      type="text"
+      placeholder="You location..."
+    />
+  </form>
 </div>

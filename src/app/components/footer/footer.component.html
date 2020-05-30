@@ -32,7 +32,7 @@
     <h3 class="heading">Browse Salons and Barbers by City</h3>
     <ul>
       <li *ngFor="let city of serviceCities">
-        <span routerLink="/search" [queryParams]="{ city: city }">{{
+        <span routerLink="/search" [queryParams]="{ query: city }">{{
           city
         }}</span>
       </li>
