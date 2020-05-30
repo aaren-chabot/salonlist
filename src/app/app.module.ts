@@ -12,7 +12,6 @@ import { BusinessCardComponent } from './components/business-card/business-card.
 import { RecommendedBusinessesComponent } from './components/recommended-businesses/recommended-businesses.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
-import { SearchComponent } from '@pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { SearchComponent } from '@pages/search/search.component';
     BusinessCardComponent,
     RecommendedBusinessesComponent,
     NotFoundComponent,
-    HeroCarouselComponent,
-    SearchComponent
+    HeroCarouselComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
   providers: [],
