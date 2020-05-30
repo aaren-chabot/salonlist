@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recommended-businesses',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommended-businesses.component.scss']
 })
 export class RecommendedBusinessesComponent implements OnInit {
-  suggestion: 'popularity';
-  sectionTitle: 'Most popular';
+  @Input() businesses = [];
+  @Input() title = '';
 
   constructor() {}
 

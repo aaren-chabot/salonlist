@@ -1,22 +1,19 @@
 <ngb-carousel
   *ngIf="images"
-  [showNavigationArrows]="false"
-  [showNavigationIndicators]="false"
-  [interval]="4000"
+  [showNavigationArrows]="config.showNavigationArrows"
+  [showNavigationIndicators]="config.showNavigationIndicators"
+  [interval]="config.interval"
 >
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[0]" alt="Random first slide" />
+  <ng-template ngbSlide *ngFor="let img of images">
+    <div class="img-wrapper">
+      <img [src]="img" alt="Random first slide" />
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[1]" alt="Random second slide" />
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[2]" alt="Random third slide" />
+    <div class="backing"></div>
+    <div class="content-wrap">
+      <div class="slide-content">
+        <h1>Find a salon or barber near you:</h1>
+        <input type="text" placeholder="You location..." />
+      </div>
     </div>
   </ng-template>
 </ngb-carousel>

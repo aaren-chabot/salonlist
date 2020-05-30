@@ -1,4 +1,4 @@
-<div class="business-card">
+<div class="business-card" *ngIf="business.name">
   <a [routerLink]="business.link">
     <div class="image-container">
       <div class="featured" [ngClass]="{ true: business.isFeatured }">
@@ -44,7 +44,7 @@
           >
         </div>
       </div>
-      <img src="https://placeimg.com/500/270/arch" alt="Picture of business" />
+      <img [src]="business.image" alt="Picture of business" />
     </div>
     <div class="content-container">
       <h3 class="business-name">{{ business.name }}</h3>

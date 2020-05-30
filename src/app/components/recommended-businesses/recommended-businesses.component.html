@@ -1,10 +1,11 @@
-<div class="recommended-businesses">
+<div class="recommended-businesses" *ngIf="title">
   <div class="title">
-    <h2>Section Title</h2>
+    <h2>{{ title }}</h2>
   </div>
-  <div class="cards">
-    <app-business-card></app-business-card>
-    <app-business-card></app-business-card>
-    <app-business-card></app-business-card>
+  <div class="cards" *ngIf="businesses">
+    <app-business-card
+      *ngFor="let biz of businesses"
+      [business]="biz"
+    ></app-business-card>
   </div>
 </div>

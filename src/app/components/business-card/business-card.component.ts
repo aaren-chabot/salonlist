@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-business-card',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business-card.component.scss']
 })
 export class BusinessCardComponent implements OnInit {
-  business = {
-    name: 'Evolve Hair Studio',
-    address: '40 Fort York Blvd, Toronto, ON M5V 3Z3',
-    image: 'https://placeimg.com/450/300/arch',
-    isFeatured: true,
-    rating: 3.5,
-    link: ''
-  };
+  @Input() business = {};
+  // business = {
+  //   name: 'Evolve Hair Studio',
+  //   address: '40 Fort York Blvd, Toronto, ON M5V 3Z3',
+  //   image: 'https://placeimg.com/450/300/arch',
+  //   isFeatured: true,
+  //   rating: 3.5,
+  //   link: ''
+  // };
 
   constructor() {}
 
