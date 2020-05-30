@@ -1,0 +1,51 @@
+.footer {
+  background-color: #f7f7f7;
+}
+
+.section {
+  display: grid;
+  background-color: #f7f7f7;
+  padding: 24px 80px;
+}
+
+.nav {
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #ddd;
+}
+
+.cities {
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid #ddd;
+}
+
+.copywrite {
+  grid-template-columns: 1fr 1fr;
+  font-size: 14px;
+}
+
+.selected-location {
+  justify-self: end;
+}
+
+.heading {
+  font-weight: 6500;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+
+  li {
+    margin-top: 12px;
+  }
+}
+
+a,
+span[routerLink] {
+  color: #212529;
+  &:hover {
+    text-decoration: underline;
+  }
+}

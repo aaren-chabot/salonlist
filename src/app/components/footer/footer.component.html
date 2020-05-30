@@ -1,1 +1,43 @@
-<p>footer works!</p>
+<div class="footer">
+  <div class="section nav">
+    <div>
+      <h3 class="heading">SalonList</h3>
+      <ul>
+        <li><span routerLink="">Salon near you</span></li>
+        <li><span routerLink="/blog">Blog</span></li>
+        <li><a class="social" href="https://twitter.com">Twitter</a></li>
+        <li>
+          <a class="social" href="https://www.instagram.com">Instagram</a>
+        </li>
+        <li><a class="social" href="https://www.facebook.com/">Facebook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="heading">For Businesses</h3>
+      <ul>
+        <li><span routerLink="/business/login">Login</span></li>
+        <li><span routerLink="/business/register">List your business</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="section cities" *ngIf="serviceCities.length > 0">
+    <h3 class="heading">Browse Salons and Barbers by City</h3>
+    <ul>
+      <li *ngFor="let city of serviceCities">
+        <span routerLink="/search" [queryParams]="{ city: city }">{{
+          city
+        }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="section copywrite">
+    <div>
+      <p>&copy; SalonList, All rights reserved</p>
+    </div>
+    <div class="selected-location">
+      <span
+        >Current city: <span>{{ currentCity }}</span></span
+      >
+    </div>
+  </div>
+</div>
