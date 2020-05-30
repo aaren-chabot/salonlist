@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   currentCity = 'Toronto';
-  serviceCities = ['Toronto'];
+  serviceCities = [
+    'Toronto',
+    'Forest Hill',
+    'Yorkville',
+    'Mississauga',
+    'Scarborough',
+    'Etobicoke'
+  ];
 
   constructor() {}
 

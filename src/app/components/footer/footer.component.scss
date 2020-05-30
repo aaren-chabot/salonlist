@@ -11,11 +11,19 @@
 .nav {
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid #ddd;
+
+  ul {
+    column-count: 2;
+  }
 }
 
 .cities {
   grid-template-columns: 1fr;
   border-bottom: 1px solid #ddd;
+
+  ul {
+    column-count: 3;
+  }
 }
 
 .copywrite {
@@ -28,7 +36,8 @@
 }
 
 .heading {
-  font-weight: 6500;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
 ul {
@@ -38,7 +47,7 @@ ul {
   font-size: 14px;
 
   li {
-    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
@@ -52,8 +61,6 @@ span[routerLink] {
 
 .social {
   display: inline-block;
-  display: inline-block;
   margin-right: 10px;
   font-size: 18px;
-  margin-top: 8px;
 }
