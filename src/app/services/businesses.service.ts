@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Business } from '@interfaces/business.model';
+import { IBusiness } from '@interfaces/business.model';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BusinessesService {
-  private barbers: Business[] = [
+  private barbers: BehaviorSubject<IBusiness[]> = new BehaviorSubject([
     {
       type: 'barber',
       name: 'Barber 1',
@@ -33,8 +34,8 @@ export class BusinessesService {
       rating: 5.0,
       link: ''
     }
-  ];
-  private salons: Business[] = [
+  ]);
+  private salons: BehaviorSubject<IBusiness[]> = new BehaviorSubject([
     {
       type: 'salon',
       name: 'Evolve Hair Studio',
@@ -62,12 +63,12 @@ export class BusinessesService {
       rating: 4.0,
       link: ''
     }
-  ];
+  ]);
 
-  getFeaturedBarbers() {
-    return this.barbers;
+  getFeaturedBarbers(): Observable<IBusiness[]> {
+    return this.barbers.asObservable();
   }
-  getFeaturedSalons() {
-    return this.salons;
+  getFeaturedSalons(): Observable<IBusiness[]> {
+    return this.salons.asObservable();
   }
 }
