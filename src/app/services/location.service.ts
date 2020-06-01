@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
-  city: BehaviorSubject<string> = new BehaviorSubject('Toronto');
+  private city: BehaviorSubject<string> = new BehaviorSubject('Toronto');
 
-  setCity = (city: string) => {
+  setCity = (city: string): void => {
     this.city.next(city);
+  };
+
+  getCity = (): Observable<string> => {
+    return this.city.asObservable();
   };
 
   initLocation = (): void => {
