@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { BusinessesService } from '@services/businesses.service';
 import { LocationService } from '@services/location.service';
-
-import { Business } from '@interfaces/business.model';
+import { IBusiness } from '@interfaces/business.model';
 
 @Component({
   selector: 'app-home-page',
@@ -10,20 +11,21 @@ import { Business } from '@interfaces/business.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  barbersTitle = 'Top barbers in...';
-  salonsTitle = 'Top salons in...';
-  featuredSalons: Business[];
-  featuredBarbers: Business[];
-  visitorCity: Promise<string>;
+  city$: Observable<string>;
+  featSalons$: Observable<IBusiness[]>;
+  featBarbers$: Observable<IBusiness[]>;
+  barbersTitle = `Top barbers near you`;
+  salonsTitle = `Top salons in near you`;
 
   constructor(
     public businessesService: BusinessesService,
     public locationService: LocationService
   ) {}
 
-  ngOnInit() {
-    this.featuredSalons = this.businessesService.getFeaturedSalons();
-    this.featuredBarbers = this.businessesService.getFeaturedBarbers();
-    this.visitorCity = this.locationService.getVisitorCity();
+  ngOnInit(): void {
+    this.locationService.initLocation();
+    this.city$ = this.locationService.getCity();
+    this.featSalons$ = this.businessesService.getFeaturedSalons();
+    this.featBarbers$ = this.businessesService.getFeaturedBarbers();
   }
 }
