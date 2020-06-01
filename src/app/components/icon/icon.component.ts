@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {
-  faLinkedin,
   faTwitter,
   faFacebook,
   faInstagram
 } from '@fortawesome/free-brands-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon',
@@ -15,7 +15,8 @@ export class IconComponent implements OnInit {
   icons = {
     twitter: faTwitter,
     instagram: faInstagram,
-    facebook: faFacebook
+    facebook: faFacebook,
+    check: faCheck
   };
   @Input() icon = '';
 
