@@ -1,4 +1,4 @@
-export interface Business {
+export interface IBusiness {
   type: 'salon' | 'barber';
   name: string;
   rating: number;
