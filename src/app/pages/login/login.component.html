@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="form">
+    <h1 class="heading">SIGN IN</h1>
+    <form #login="ngForm" (ngSubmit)="handleSubmit(login)">
+      <input type="text" name="email" id="email" placeholder="Email" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <div class="remain-logged">
+        <label class="label">
+          <input class="checkbox" type="checkbox" />
+          <span class="checkbox-text">
+            <span class="checkbox-check">
+              <app-icon icon="check"></app-icon>
+            </span>
+            Stay signed in
+          </span>
+        </label>
+      </div>
+      <div class="forgot-password">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+      <button type="submit">SIGN IN</button>
+    </form>
+    <div class="additional-options">
+      <h2 class="options-heading">Or Sign In with</h2>
+      <div class="options">
+        <span><app-icon icon="google"></app-icon></span>
+        <span><app-icon icon="facebook"></app-icon></span>
+        <span><app-icon icon="twitter"></app-icon></span>
+        <span><app-icon icon="linkedin"></app-icon></span>
+      </div>
+      <div class="options-register">
+        <span>Not a Member?</span>
+        <button routerLink="/register">Sign Up</button>
+      </div>
+    </div>
+  </div>
+  <div class="info"></div>
+</div>
