@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import {
   faTwitter,
   faFacebook,
-  faInstagram
+  faInstagram,
+  faGoogle,
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +18,8 @@ export class IconComponent implements OnInit {
     twitter: faTwitter,
     instagram: faInstagram,
     facebook: faFacebook,
+    google: faGoogle,
+    linkedin: faLinkedin,
     check: faCheck
   };
   @Input() icon = '';
