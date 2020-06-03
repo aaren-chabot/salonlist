@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const bodyParser = require('body-parser');
 
 // Server Utilities
 const { onError, onListening, normalizePort } = require('./utils/server');
@@ -9,8 +10,8 @@ const { PORT } = require('./utils/constants');
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set Headers
 app.use((req, res, next) => {
