@@ -1,31 +1,23 @@
 const express = require('express');
-const http = require('http');
-const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-// Server Utilities
-const { onError, onListening, normalizePort } = require('./utils/server');
+// Import Utilities
+const applyMiddleware = require('./utils/apply-middleware');
+
+// Import Custom Middleware
+const commonMiddleware = require('./middleware');
+const errorHandlerMiddleware = require('./middleware/error-handler/error-handler.middleware');
+const developmentLogger = require('./middleware/development-logger.middleware');
 
 // Configs
-const { PORT } = require('./utils/constants');
+const configs = require('./utils/config');
+const { URI: mongoURI, config: mongoConfig } = configs.mongo;
+const { PORT } = configs.server;
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Set Headers
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  );
-  res.setHeader(
-    'Access-Control-Allow-Method',
-    'GET, POST, PATCH, DELETE, PUT, OPTIONS'
-  );
-  next();
-});
+// Common Middleware
+applyMiddleware(commonMiddleware, app);
 
 // Routes
 app.use('/healthcheck', require('./routes/healthCheck/healthCheck'));
@@ -34,18 +26,20 @@ app.use('/businesses', require('./routes/businesses/businesses'));
 app.use('/businessUsers', require('./routes/businessUsers/businessUsers'));
 app.use('/users', require('./routes/users/users'));
 
-// Catch Errors
-app.use((err, req, res, next) => {
-  if (err.name === 'UnauthorizedError') {
-    const errors = [{ message: 'unauthorized' }];
+// Development Logger
+app.use(developmentLogger);
 
-    res.status(401).json({ errors });
-  }
-});
+// Error Middleware
+app.use(errorHandlerMiddleware);
 
-app.set('port', normalizePort(PORT));
-
-const server = http.createServer(app);
-// server.on('error', (err) => onError(err, PORT));
-// server.on('listening', onListening(server, PORT));
-server.listen(PORT);
+mongoose
+  .connect(mongoURI, mongoConfig)
+  .then(async () => {
+    console.log(`Connected to database at ${mongoURI}`);
+    app.listen(PORT, () => {
+      console.log(`Server is running on PORT: ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
