@@ -42,7 +42,7 @@ yarn-error.log
 testem.log
 /typings
 todo.txt
-/utils/configs.js
+/utils/config.js
 
 # System Files
 .DS_Store
