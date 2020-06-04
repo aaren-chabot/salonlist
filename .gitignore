@@ -41,6 +41,7 @@ yarn-error.log
 testem.log
 /typings
 todo.txt
+/server/utils/configs.js
 
 # System Files
 .DS_Store
