@@ -20,7 +20,7 @@ const handleSettingHeaders = (app) => {
     );
     res.setHeader(
       'Access-Control-Allow-Method',
-      'GET, POST, DELETE' // PATCH, PUT, OPTIONS
+      'GET, POST, DELETE, PATCH' // PUT, OPTIONS
     );
     next();
   });
