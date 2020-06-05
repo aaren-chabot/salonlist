@@ -19,18 +19,18 @@ SalonList - Api
 
 #### URI: '/api/blogs'
 
-| Methods | Input | Output      |
-| ------- | ----- | ----------- |
-| GET     |       | ALL Blog[]  |
-| POST    | Blog  | { Message } |
+| Methods | Input | Output |
+| ------- | ----- | ------ |
+| GET     |       | Blog[] |
+| POST    | Blog  | Blog   |
 
 #### URI: '/api/blogs/:id'
 
-| Methods | Input | Output      |
-| ------- | ----- | ----------- |
-| GET     | ID    | Blog        |
-| PATCH   | ID    | { Message } |
-| DELETE  | ID    | { Message } |
+| Methods | Input | Output       |
+| ------- | ----- | ------------ |
+| GET     | ID    | Blog         |
+| PATCH   | ID    | Blog         |
+| DELETE  | ID    | deletedCount |
 
 ---
 
