@@ -27,11 +27,11 @@ const getBlogById = async (Id) => {
   }
 };
 
-const updateBlogById = async (Id, BlogData) => {
+const updateBlogById = async (Id, blogData) => {
   try {
     const blog = await Blog.findById(Id);
     if (!blog) throw new Error('404');
-    blog.set(BlogData);
+    blog.set(blogData);
     return await blog.save();
   } catch (error) {
     throw error;
