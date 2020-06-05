@@ -13,7 +13,7 @@ const blogSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    validate: imageUrlValidator(v),
+    validate: imageUrlValidator,
     required: [true, 'A blog image is required.']
   },
   body: [
@@ -25,13 +25,12 @@ const blogSchema = new mongoose.Schema({
       img: {
         type: String,
         trim: true,
-        validate: imageUrlValidator(v)
+        validate: imageUrlValidator
       },
       heading: {
         type: String,
         trim: true
-      },
-      required: [true, 'An article body is required.']
+      }
     }
   ],
   author: {
