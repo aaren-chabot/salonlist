@@ -23,7 +23,6 @@ applyMiddleware(commonMiddleware, app);
 app.use('/healthcheck', require('./routes/healthCheck/healthCheck'));
 app.use('/blogs', require('./routes/blogs/blogs'));
 app.use('/businesses', require('./routes/businesses/businesses'));
-app.use('/businessUsers', require('./routes/businessUsers/businessUsers'));
 app.use('/users', require('./routes/users/users'));
 
 // Development Logger

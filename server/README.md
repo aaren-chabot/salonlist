@@ -9,9 +9,6 @@ SalonList - Api
   - [Businesses](#businesses)
       - [URI: '/api/businesses'](#uri-apibusinesses)
       - [URI: '/api/businesses/:id'](#uri-apibusinessesid)
-  - [BusinessesUsers](#businessesusers)
-      - [URI: '/api/businessesusers/login'](#uri-apibusinessesuserslogin)
-      - [URI: '/api/businessesusers/register'](#uri-apibusinessesusersregister)
   - [Users](#users)
       - [URI: '/api/users/login'](#uri-apiuserslogin)
       - [URI: '/api/users/register'](#uri-apiusersregister)
@@ -53,22 +50,6 @@ SalonList - Api
 | GET     | ID    | Business    |
 | PATCH   | ID    | { Message } |
 | DELETE  | ID    | { Message } |
-
----
-
-## BusinessesUsers
-
-#### URI: '/api/businessesusers/login'
-
-| Methods | Input        | Output      |
-| ------- | ------------ | ----------- |
-| POST    | BusinessUser | { Message } |
-
-#### URI: '/api/businessesusers/register'
-
-| Methods | Input | Output      |
-| ------- | ----- | ----------- |
-| POST    | ID    | { Message } |
 
 ---
 
