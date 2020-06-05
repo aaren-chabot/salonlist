@@ -12,6 +12,9 @@ export class SearchPageComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    // this.route.paramMap.subscribe((paramMap: paramMap) => {
+    // if (AudioParamMap.has('query'))
+    // })
     this.query = this.route.snapshot.queryParams.query;
     console.log('query', this.query);
   }
