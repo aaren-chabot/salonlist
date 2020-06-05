@@ -28,12 +28,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  businesses: [
-    {
-      type: mongose.ObjectId,
-      ref: 'Business'
-    }
-  ],
+  // businesses: [
+  //   {
+  //     type: mongose.ObjectId,
+  //     ref: 'Business'
+  //   }
+  // ],
   date: {
     type: Date,
     default: Date.now
