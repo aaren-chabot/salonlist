@@ -20,10 +20,10 @@ const app = express();
 applyMiddleware(commonMiddleware, app);
 
 // Routes
-app.use('/healthcheck', require('./routes/healthCheck/healthCheck'));
-app.use('/blogs', require('./routes/blogs/blogs'));
-app.use('/businesses', require('./routes/businesses/businesses'));
-app.use('/users', require('./routes/users/users'));
+app.use('/api/healthcheck', require('./routes/healthCheck/healthCheck'));
+app.use('/api/blogs', require('./routes/blogs/blogs'));
+app.use('/api/businesses', require('./routes/businesses/businesses'));
+app.use('/api/users', require('./routes/users/users'));
 
 // Development Logger
 app.use(developmentLogger);
