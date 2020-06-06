@@ -12,7 +12,7 @@ const registerUser = async (email, password) => {
 
 const loginUser = async (email, password) => {
   try {
-    const user = await User.find({ email: email });
+    const [user] = await User.find({ email: email });
     if (!user) throw new Error('403'); // Email not found
 
     const match = await user.comparePassword(password);

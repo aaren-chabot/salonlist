@@ -31,7 +31,6 @@ router.post('/login', async (req, res, next) => {
     if (!isValid) return res.status(400).json(errors);
 
     const { email, password } = req.body;
-
     const token = await userService.loginUser(email, password);
 
     res.status(200).json({
@@ -42,7 +41,7 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.get('/protected', passport.authenticate('jwt'), (req, res) => {
+router.get('/protected', passport.authenticate('local'), (req, res) => {
   console.log('res.user', req.user);
   res.send('success');
 });

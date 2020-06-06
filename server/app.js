@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 // Import Utilities
 const applyMiddleware = require('./utils/apply-middleware');
@@ -18,6 +19,11 @@ const app = express();
 
 // Common Middleware
 applyMiddleware(commonMiddleware, app);
+
+// passport
+app.use(passport.initialize());
+require('./utils/passport')(passport);
+app.use(passport.session());
 
 // Routes
 app.use('/api/healthcheck', require('./routes/healthCheck/healthCheck'));
