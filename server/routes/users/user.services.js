@@ -1,4 +1,5 @@
 const User = require('../../models/user.model');
+const issueJWT = require('../../utils/token-issuer');
 
 const registerUser = async (email, password) => {
   try {
@@ -12,14 +13,14 @@ const registerUser = async (email, password) => {
 const loginUser = async (email, password) => {
   try {
     const user = await User.find({ email: email });
-    if (user) {
-      const match = await user.comparePassword(password);
-      if (match) {
-        return user;
-      }
-    }
-  } catch (err) {
-    throw err;
+    if (!user) throw new Error('403'); // Email not found
+
+    const match = await user.comparePassword(password);
+    if (!match) throw new Error('402'); // Email & Pass do not match
+
+    return await issueJWT(user);
+  } catch (error) {
+    throw error;
   }
 };
 
