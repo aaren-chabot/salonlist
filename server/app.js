@@ -11,7 +11,7 @@ const developmentLogger = require('./middleware/development-logger.middleware');
 
 // Configs
 const configs = require('./utils/config');
-const { URI: mongoURI, config: mongoConfig } = configs.mongo;
+const { URI: mongooseURI, config: mongooseConfig } = configs.mongoose;
 const { PORT } = configs.server;
 
 const app = express();
@@ -32,7 +32,7 @@ app.use(developmentLogger);
 app.use(errorHandlerMiddleware);
 
 mongoose
-  .connect(mongoURI, mongoConfig)
+  .connect(mongooseURI, mongooseConfig)
   .then(async () => {
     console.log(`Connected to database at ${mongoURI}`);
     app.listen(PORT, () => {
