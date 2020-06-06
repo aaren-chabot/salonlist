@@ -34,7 +34,7 @@ const blogSchema = new mongoose.Schema({
     }
   ],
   author: {
-    type: mongoose.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
   created: {

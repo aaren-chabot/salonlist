@@ -20,7 +20,7 @@ const businessSchema = new mongoose.Schema({
     default: false
   },
   owner: {
-    type: mongoose.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
   type: {

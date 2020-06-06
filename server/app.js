@@ -34,7 +34,9 @@ app.use(errorHandlerMiddleware);
 mongoose
   .connect(mongooseURI, mongooseConfig)
   .then(async () => {
-    console.log(`Connected to database at ${mongoURI}`);
+    console.log(
+      `Connected to database at ${mongooseURI}, \nDatabase: ${mongooseConfig.dbName}`
+    );
     app.listen(PORT, () => {
       console.log(`Server is running on PORT: ${PORT}`);
     });
