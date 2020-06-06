@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
-const {
-  imageUrlValidator,
-  phoneValidator,
-  openCloseValidator,
-  postalZipValidator
-} = require('./validators');
+const { imageUrlValidator, phoneValidator } = require('./validators');
 
 // prettier-ignore
 const enums = {
@@ -19,6 +14,10 @@ const businessSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Business name is required.'],
     trim: true
+  },
+  isFeatured: {
+    type: Boolean,
+    default: false
   },
   owner: {
     type: mongoose.ObjectId,
