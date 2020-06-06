@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const keys = require('../config/keys');
+const keys = require('./config');
 
 const issueJWT = async (userData) => {
   const { _id: id, email } = userData;
