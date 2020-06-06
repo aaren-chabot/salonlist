@@ -2,6 +2,8 @@
 
 module.exports = errorMessages = {
   _401: 'Unauthorized for that route.',
+  _402: 'Password and email do not match.',
+  _403: 'Email not found, please register or try a different email.',
   _404:
     'Not Found: The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.',
   _503:

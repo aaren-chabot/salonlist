@@ -5,6 +5,10 @@ const errorHandlerMiddleware = (err, res, next) => {
     switch (err.message) {
       case '401':
         res.status(401).send(errorMessages._401);
+      case '402':
+        res.status(402).send(errorMessages._402);
+      case '403':
+        res.status(403).send(errorMessages._403);
       case '404':
         res.status(404).send(errorMessages._404);
       case '503':
