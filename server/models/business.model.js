@@ -53,7 +53,7 @@ const businessSchema = new mongoose.Schema({
   phone: {
     type: String,
     validate: {
-      validator: phoneValidator(v),
+      validator: phoneValidator,
       message: (props) =>
         `${props.value} is not a valid phone number. Must use ###-###-#### format!`
     },
@@ -63,7 +63,7 @@ const businessSchema = new mongoose.Schema({
     hero: {
       type: String,
       validate: {
-        validator: imageUrlValidator(v),
+        validator: imageUrlValidator,
         message: (props) => `${props.value} is not a valid image URL.`
       },
       required: [true, 'A Business needs a hero image.']
@@ -72,7 +72,7 @@ const businessSchema = new mongoose.Schema({
       {
         type: String,
         validate: {
-          validator: imageUrlValidator(v),
+          validator: imageUrlValidator,
           message: (props) => `${props.value} is not a valid image URL.`
         }
       }
@@ -91,12 +91,6 @@ const businessSchema = new mongoose.Schema({
       close: {
         type: String,
         required: [true, 'A weekday must be specified']
-      },
-      required: [true, 'The business reuires day and hours of opperation'],
-      validator: {
-        validate: openCloseValidator(v),
-        message: (props) =>
-          `Open time ${v.open} must be before close time ${v.close}`
       }
     }
   ],
@@ -131,14 +125,6 @@ const businessSchema = new mongoose.Schema({
     streetDetails: {
       type: String,
       trim: true
-    },
-    required: [true, 'A business address is required.'],
-    validator: {
-      validate: postalZipValidator(v),
-      message: (props) =>
-        `A valid ${
-          props.country === 'Canada' ? 'Postal Code' : 'Zip Code'
-        } is required.`
     }
   },
   date: {

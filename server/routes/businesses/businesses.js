@@ -1,16 +1,57 @@
 const express = require('express');
 const router = express.Router();
 
-// const businessUtils = require('./business.utils');
+const businessServices = require('./business.services');
 
-const tempData = require('../../temp-data');
+router
+  .route('/')
+  .get(async (req, res, next) => {
+    try {
+      const businesses = await businessServices.getAllBusinesses();
+      res.status(200).json({ data: businesses });
+    } catch (error) {
+      next(error);
+    }
+  })
+  .post(async (req, res, next) => {
+    try {
+      const createdBusiness = await businessServices.createBusinesses(req.body);
+      res.status(200).send({ data: createdBusiness });
+    } catch (error) {
+      next(error);
+    }
+  });
 
-router.route('/').get(async (req, res, next) => {
-  try {
-    res.status(200).json(tempData);
-  } catch (error) {
-    next(error);
-  }
-});
+router
+  .route('/:id')
+  .get(async (req, res, next) => {
+    try {
+      const business = await businessServices.getBusinessById(req.params.id);
+      res.status(200).send({ data: business });
+    } catch (error) {
+      next(error);
+    }
+  })
+  .patch(async (req, res, next) => {
+    try {
+      const updatedBusiness = await businessServices.updateBusinessById(
+        req.params.id,
+        req.body
+      );
+      res.status(200).send({ data: updatedBusiness });
+    } catch (error) {
+      next(error);
+    }
+  })
+  .delete(async (req, res, next) => {
+    try {
+      const deleteCount = await businessServices.deleteBusinessById(
+        req.params.id
+      );
+      res.status(200).send({ data: deleteCount });
+    } catch (error) {
+      next(error);
+    }
+  });
 
 module.exports = router;
