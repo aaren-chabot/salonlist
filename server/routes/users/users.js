@@ -41,7 +41,12 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.get('/protected', passport.authenticate('local'), (req, res) => {
+router.get('/protected/local', passport.authenticate('local'), (req, res) => {
+  console.log('res.user', req.user);
+  res.send('success');
+});
+
+router.get('/protected/jwt', passport.authenticate('jwt'), (req, res) => {
   console.log('res.user', req.user);
   res.send('success');
 });
