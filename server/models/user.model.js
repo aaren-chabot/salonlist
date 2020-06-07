@@ -1,9 +1,6 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-
-const {
-  bcrypt: { saltRounds }
-} = require('../utils/config');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -48,7 +45,10 @@ userSchema.pre('save', async function (next) {
   console.log('user', user);
   if (user.isModified('password') || user.isNew) {
     try {
-      user.password = await bcrypt.hash(user.password, saltRounds);
+      user.password = await bcrypt.hash(
+        user.password,
+        process.env.BCRYPT_SALT_ROUNDS
+      );
       return next();
     } catch (err) {
       return next(err);

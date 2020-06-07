@@ -1,4 +1,6 @@
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
+
 const keys = require('./config');
 
 const issueJWT = async (userData) => {
@@ -9,7 +11,7 @@ const issueJWT = async (userData) => {
     email
   };
 
-  return jwt.sign(payload, keys.SECRET);
+  return jwt.sign(payload, process.env.JWT_SECRET);
 };
 
 module.exports = issueJWT;
