@@ -41,14 +41,41 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.get('/protected/local', passport.authenticate('local'), (req, res) => {
+router.get('/auth/local', passport.authenticate('local'), (req, res) => {
   console.log('res.user', req.user);
   res.send('success');
 });
 
-router.get('/protected/jwt', passport.authenticate('jwt'), (req, res) => {
+router.get('/auth/jwt', passport.authenticate('jwt'), (req, res) => {
   console.log('res.user', req.user);
   res.send('success');
+});
+
+router.get('/auth/twitter', passport.authenticate('twitter'), (req, res) => {
+  console.log('res.user', req.user);
+  res.send('success');
+});
+
+router.get(
+  '/auth/google',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  (req, res) => {
+    console.log('res.user', req.user);
+    res.send('success');
+  }
+);
+
+app.get(
+  '/auth/google/return',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function (req, res) {
+    res.redirect('/');
+  }
+);
+
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = router;
