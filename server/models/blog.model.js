@@ -8,10 +8,16 @@ const blogSchema = new mongoose.Schema({
     trim: true
   },
   description: {
-    type: String,
-    trim: true
+    short: {
+      type: String,
+      trim: true
+    },
+    long: {
+      type: String,
+      trim: true
+    }
   },
-  image: {
+  heroImg: {
     type: String,
     validate: imageUrlValidator,
     required: [true, 'A blog image is required.']
