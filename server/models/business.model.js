@@ -10,7 +10,7 @@ const enums = {
 };
 
 const businessSchema = new mongoose.Schema({
-  businessName: {
+  name: {
     type: String,
     required: [true, 'Business name is required.'],
     trim: true
@@ -21,7 +21,8 @@ const businessSchema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   type: {
     type: String,
@@ -32,10 +33,12 @@ const businessSchema = new mongoose.Schema({
     score: {
       type: Number,
       max: 5,
-      min: 0
+      min: 0,
+      default: 0
     },
     reviews: {
-      type: Number
+      type: Number,
+      default: 0
     }
   },
   description: {
