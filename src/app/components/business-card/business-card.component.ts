@@ -1,12 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { IBusiness } from '@interfaces/business.model';
+
 @Component({
   selector: 'app-business-card',
   templateUrl: './business-card.component.html',
   styleUrls: ['./business-card.component.scss']
 })
 export class BusinessCardComponent implements OnInit {
-  @Input() business: any = {};
+  @Input() business: IBusiness;
   businessAddress: string;
 
   constructor() {}
@@ -14,6 +16,5 @@ export class BusinessCardComponent implements OnInit {
   ngOnInit() {
     const { street, city, zip } = this.business?.address;
     this.businessAddress = `${street}, ${city} ${zip}`;
-    console.log('city', this.business);
   }
 }
