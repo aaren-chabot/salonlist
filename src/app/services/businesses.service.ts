@@ -14,9 +14,9 @@ export class BusinessesService {
 
   getFeaturedBarbers(): Observable<IBusiness[]> {
     this.http
-      .get<IBusiness[]>('http://localhost:3000/businesses')
+      .get<{ data: IBusiness[] }>('http://localhost:5000/api/businesses')
       .subscribe((response) => {
-        const filteredResponse = response.filter(
+        const filteredResponse = response.data.filter(
           (biz) => biz.type === 'barber'
         );
         this.featBarbers.next(filteredResponse);
@@ -26,9 +26,11 @@ export class BusinessesService {
 
   getFeaturedSalons(): Observable<IBusiness[]> {
     this.http
-      .get<IBusiness[]>('http://localhost:3000/businesses')
+      .get<{ data: IBusiness[] }>('http://localhost:5000/api/businesses')
       .subscribe((response) => {
-        const filteredResponse = response.filter((biz) => biz.type === 'salon');
+        const filteredResponse = response.data.filter(
+          (biz) => biz.type === 'salon'
+        );
         this.featSalons.next(filteredResponse);
       });
     return this.featSalons.asObservable();

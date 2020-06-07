@@ -1,4 +1,4 @@
-<div class="business-card" *ngIf="business.name">
+<div class="business-card" *ngIf="business.businessName">
   <a [routerLink]="business.link">
     <div class="image-container">
       <div class="featured" [ngClass]="{ true: business.isFeatured }">
@@ -9,46 +9,46 @@
         <div class="star-rating">
           <span
             [ngClass]="{
-              half: business.rating == 0.5,
-              full: business.rating >= 1
+              half: business.rating.score == 0.5,
+              full: business.rating.score >= 1
             }"
             >&#9734;</span
           >
           <span
             [ngClass]="{
-              half: business.rating == 1.5,
-              full: business.rating >= 2
+              half: business.rating.score == 1.5,
+              full: business.rating.score >= 2
             }"
             >&#9734;</span
           >
           <span
             [ngClass]="{
-              half: business.rating == 2.5,
-              full: business.rating >= 3
+              half: business.rating.score == 2.5,
+              full: business.rating.score >= 3
             }"
             >&#9734;</span
           >
           <span
             [ngClass]="{
-              half: business.rating == 3.5,
-              full: business.rating >= 4
+              half: business.rating.score == 3.5,
+              full: business.rating.score >= 4
             }"
             >&#9734;</span
           >
           <span
             [ngClass]="{
-              half: business.rating == 4.5,
-              full: business.rating >= 5
+              half: business.rating.score == 4.5,
+              full: business.rating.score >= 5
             }"
             >&#9734;</span
           >
         </div>
       </div>
-      <img [src]="business.image" alt="Picture of business" />
+      <img [src]="business.images.hero" alt="Picture of business" />
     </div>
     <div class="content-container">
-      <h3 class="business-name">{{ business.name }}</h3>
-      <span class="business-address">{{ business.address }}</span>
+      <h3 class="business-name">{{ business.businessName }}</h3>
+      <span class="business-address">{{ businessAddress }}</span>
     </div>
   </a>
 </div>
