@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cors = require('cors');
 
 // Import Utilities
 const applyMiddleware = require('./utils/apply-middleware');
@@ -19,6 +20,7 @@ const app = express();
 
 // Common Middleware
 applyMiddleware(commonMiddleware, app);
+app.use(cors());
 
 // passport
 app.use(passport.initialize());
