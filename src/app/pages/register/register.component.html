@@ -1,34 +1,37 @@
 <div class="register-page">
   <div class="form">
-    <h1 class="heading">Sign up</h1>
+    <h1 class="heading">sign up</h1>
     <form #login="ngForm" (ngSubmit)="handleSubmit(login)">
       <input type="text" name="email" id="email" placeholder="Email" />
-      <input
-        type="text"
-        name="phoneNumber"
-        id="phoneNumber"
-        placeholder="Phone Number"
-      />
-      <input
-        type="text"
-        name="firstName"
-        id="firstName"
-        placeholder="First Name"
-      />
-      <input
-        type="text"
-        name="lastName"
-        id="lastName"
-        placeholder="Last Name"
-      />
       <input
         type="password"
         name="password"
         id="password"
         placeholder="Password"
       />
-      <button type="submit">Sign up</button>
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        placeholder="Confirm password"
+      />
+
+      <button type="submit">sign up</button>
     </form>
+    <div class="additional-options">
+      <h2 class="options-heading">Or Sign In with</h2>
+      <div class="options">
+        <span>
+          <app-icon icon="google"></app-icon>
+        </span>
+        <span>
+          <app-icon icon="facebook"></app-icon>
+        </span>
+        <span>
+          <app-icon icon="twitter"></app-icon>
+        </span>
+      </div>
+    </div>
   </div>
   <div class="info"></div>
 </div>
