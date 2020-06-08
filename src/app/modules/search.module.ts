@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '@modules/shared.module';
 
-import { SearchPageComponent } from '@pages/search/search.component';
+import { SearchPageComponent } from '@pages/search/search-page.component';
 
 const routes: Routes = [
   {
