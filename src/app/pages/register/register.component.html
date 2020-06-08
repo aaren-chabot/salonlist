@@ -1,18 +1,26 @@
 <div class="register-page">
   <div class="form">
     <h1 class="heading">sign up</h1>
-    <form #login="ngForm" (ngSubmit)="handleSubmit(login)">
-      <input type="text" name="email" id="email" placeholder="Email" />
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+      <input
+        type="text"
+        name="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email"
+      />
       <input
         type="password"
         name="password"
         id="password"
+        formControlName="password"
         placeholder="Password"
       />
       <input
         type="password"
         name="confirmPassword"
         id="confirmPassword"
+        formControlName="confirmPassword"
         placeholder="Confirm password"
       />
 
