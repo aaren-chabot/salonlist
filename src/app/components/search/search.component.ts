@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { SearchService } from '@services/search/search.service';
 
 @Component({
   selector: 'app-search',
@@ -8,16 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  constructor(private router: Router) {}
+  form: FormGroup;
+  searchQuery: string;
 
-  ngOnInit() {}
+  constructor(private router: Router, private searchService: SearchService) {}
 
-  handleSubmit(f: NgForm) {
-    const search = f.value.search;
-    if (search.length > 0) {
-      this.router.navigate(['/search'], {
-        queryParams: { query: search }
-      });
+  ngOnInit() {
+    this.searchService.getSearchQuery().subscribe((query) => {
+      this.searchQuery = query;
+    });
+    this.form = new FormGroup({
+      search: new FormControl(this.searchQuery, {
+        validators: [Validators.required]
+      })
+    });
+  }
+
+  handleSubmit() {
+    if (this.form.valid) {
+      this.searchService.setSearchQuery(this.form.value.search);
+      this.router.navigate(['/search']);
     }
   }
 }
