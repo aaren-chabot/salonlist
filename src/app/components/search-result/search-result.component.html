@@ -1,0 +1,16 @@
+<div class="search-result" *ngIf="business" routerLink="">
+  <div class="img" [style.background-image]="resultImg">
+    <div class="featured" *ngIf="business.isFeatured">Featured</div>
+  </div>
+  <div class="content">
+    <div class="content-row">
+      <h3 class="name">{{ business.name }}</h3>
+      <div class="type">Salon</div>
+    </div>
+    <div class="content-row">
+      <div class="address">{{ businessAddress }}</div>
+      <div class="price">$$</div>
+    </div>
+    <div class="description">{{ business.description.short }}</div>
+  </div>
+</div>
