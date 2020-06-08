@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.searchService.getSearchQuery().subscribe((query) => {
       this.searchQuery = query;
+      console.log('searchQuery', this.searchQuery);
     });
     this.form = new FormGroup({
       search: new FormControl(this.searchQuery, {
