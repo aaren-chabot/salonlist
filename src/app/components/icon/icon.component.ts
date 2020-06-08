@@ -6,7 +6,7 @@ import {
   faGoogle,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faList, faTh } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon',
@@ -20,7 +20,9 @@ export class IconComponent implements OnInit {
     facebook: faFacebook,
     google: faGoogle,
     linkedin: faLinkedin,
-    check: faCheck
+    check: faCheck,
+    grid: faTh,
+    list: faList
   };
   @Input() icon = '';
 
