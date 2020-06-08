@@ -11,6 +11,8 @@ import { HeroCarouselComponent } from '@components/hero-carousel/hero-carousel.c
 import { IconComponent } from '@components/icon/icon.component';
 import { RecommendedBusinessesComponent } from '@components/recommended-businesses/recommended-businesses.component';
 import { SearchComponent } from '@components/search/search.component';
+import { SearchResultComponent } from '@components/search-result/search-result.component';
+import { SearchFilterComponent } from '@components/search-filter/search-filter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SearchComponent } from '@components/search/search.component';
     HeroCarouselComponent,
     IconComponent,
     RecommendedBusinessesComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent,
+    SearchFilterComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,9 @@ import { SearchComponent } from '@components/search/search.component';
     HeroCarouselComponent,
     IconComponent,
     RecommendedBusinessesComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent,
+    SearchFilterComponent
   ]
 })
 export class SharedModule {}
