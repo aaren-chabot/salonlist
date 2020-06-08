@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LocationService } from '@services/location.service';
+import { LocationService } from '@services/location/location.service';
 import { Observable } from 'rxjs';
 
 @Component({
