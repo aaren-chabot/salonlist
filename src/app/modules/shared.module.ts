@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +23,7 @@ import { SearchComponent } from '@components/search/search.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     FontAwesomeModule,
     NgbModule
@@ -30,6 +31,7 @@ import { SearchComponent } from '@components/search/search.component';
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     FontAwesomeModule,
     NgbModule,
