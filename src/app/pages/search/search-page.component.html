@@ -2,4 +2,51 @@
   <div class="carousel">
     <app-hero-carousel [imgHeight]="imgHeight" search></app-hero-carousel>
   </div>
+  <div class="body">
+    <div
+      class="search-info"
+      [ngStyle]="{ 'grid-column': searchView === 'list' ? '2/3' : '2/4' }"
+    >
+      <div class="search-query" *ngIf="searchTerm">
+        {{ searchResults.length }} Results for '{{ searchTerm | async }}'
+      </div>
+      <div class="results-view">
+        <button
+          class="list-view"
+          (click)="toggleResultsView($event, 'list')"
+          [ngClass]="{ active: searchView === 'list' }"
+        >
+          <app-icon icon="list"></app-icon>
+        </button>
+        <button
+          class="grid-view"
+          (click)="toggleResultsView($event, 'grid')"
+          [ngClass]="{ active: searchView === 'grid' }"
+        >
+          <app-icon icon="grid"></app-icon>
+        </button>
+      </div>
+    </div>
+    <div class="filter">
+      <app-search-filter></app-search-filter>
+    </div>
+    <div
+      class="results"
+      [ngStyle]="{ 'grid-column': searchView === 'list' ? '2/3' : '2/4' }"
+      *ngIf="searchResults"
+    >
+      <div class="list" *ngIf="searchView === 'list'">
+        <app-search-result
+          *ngFor="let result of searchResults"
+          [business]="result"
+        ></app-search-result>
+      </div>
+      <div class="grid" *ngIf="searchView === 'grid'">
+        <app-business-card
+          *ngFor="let result of searchResults"
+          [business]="result"
+        ></app-business-card>
+      </div>
+    </div>
+  </div>
 </div>
