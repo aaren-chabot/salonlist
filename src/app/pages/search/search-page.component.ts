@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./search-page.component.scss']
 })
 export class SearchPageComponent implements OnInit {
-  heading = 'Search Results';
+  title = 'Search Results';
   imgHeight = 300;
   searchResults: IBusiness[];
   searchTerm: Observable<string>;

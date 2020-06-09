@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroCarouselComponent implements OnInit {
   @Input() search = true;
+  @Input() title: string;
   @Input() imgHeight = 500;
   config = {
     showNavigationArrows: false,

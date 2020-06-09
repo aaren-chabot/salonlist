@@ -11,6 +11,7 @@ import { IBusiness } from '@interfaces/business.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  title = 'Find a salon or barber near you';
   city$: Observable<string>;
   featSalons$: Observable<IBusiness[]>;
   featBarbers$: Observable<IBusiness[]>;

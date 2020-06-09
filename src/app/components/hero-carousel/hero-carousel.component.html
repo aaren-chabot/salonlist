@@ -11,7 +11,7 @@
     <div class="backing"></div>
     <div class="content-wrap">
       <div class="slide-content">
-        <h1>Find a salon or barber near you:</h1>
+        <h1 *ngIf="title">{{ title }}</h1>
         <app-search></app-search>
       </div>
     </div>
