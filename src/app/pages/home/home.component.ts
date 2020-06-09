@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { BusinessesService } from '@services/businesses.service';
+import { BusinessesService } from '@services/businesses/businesses.service';
 import { LocationService } from '@services/location/location.service';
 import { IBusiness } from '@interfaces/business.model';
 

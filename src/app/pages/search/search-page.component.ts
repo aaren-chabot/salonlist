@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessesService } from '@services/businesses.service';
+import { BusinessesService } from '@services/businesses/businesses.service';
 import { SearchService } from '@services/search/search.service';
 import { IBusiness } from '@interfaces/business.model';
 import { Observable } from 'rxjs';
