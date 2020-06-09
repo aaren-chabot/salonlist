@@ -7,11 +7,20 @@ router
   .route('/')
   .get(async (req, res, next) => {
     try {
+      const acceptableQueries = ['isFeatured', 'type'];
+      const filteredQuery = {};
+      acceptableQueries.forEach((field) => {
+        if (req.query[field]) {
+          filteredQuery[field] = req.query[field];
+        }
+      });
       const pageSize = +req.query.pagesize;
       const currentpage = +req.query.page;
+
       const businesses = await businessServices.getAllBusinesses(
         pageSize,
-        currentpage
+        currentpage,
+        filteredQuery
       );
       res.status(200).json({ results: businesses.length, data: businesses });
     } catch (error) {
