@@ -47,8 +47,15 @@
       <img [src]="business.images.hero" alt="Picture of business" />
     </div>
     <div class="content-container">
-      <h3 class="business-name">{{ business.businessName }}</h3>
-      <span class="business-address">{{ businessAddress }}</span>
+      <div class="content-row">
+        <h3 class="name">{{ business.businessName }}</h3>
+        <div class="type">{{ business.type }}</div>
+      </div>
+      <div class="content-row">
+        <div class="address">{{ businessAddress }}</div>
+        <div class="price">$$</div>
+      </div>
+      <div class="description">{{ business.description.short }}</div>
     </div>
   </a>
 </div>

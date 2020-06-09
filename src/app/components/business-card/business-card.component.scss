@@ -3,6 +3,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  max-width: 490px;
 
   a {
     text-decoration: none;
@@ -79,17 +80,41 @@
 
 .content-container {
   padding: 16px 20px;
+  color: #000;
 }
 
-.business-name {
+.content-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.name {
   font-size: 1.8rem;
   line-height: 2.2rem;
-  color: #000;
   margin-bottom: 4px;
 }
 
-.business-address {
-  color: rgb(113, 113, 113);
+.type {
+  color: #717171;
   font-size: 1.4rem;
   line-height: 1.8rem;
+}
+
+.address {
+  color: #717171;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin: 0 10px 10px 0;
+}
+
+.price {
+  color: #717171;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin-top: -8px;
+}
+
+.description {
+  font-size: 14px;
 }

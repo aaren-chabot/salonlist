@@ -9,6 +9,7 @@ import { IBusiness } from '@interfaces/business.model';
 })
 export class BusinessCardComponent implements OnInit {
   @Input() business: IBusiness;
+  @Input() searchView = true;
   businessAddress: string;
 
   constructor() {}
