@@ -7,8 +7,13 @@ router
   .route('/')
   .get(async (req, res, next) => {
     try {
-      const businesses = await businessServices.getAllBusinesses();
-      res.status(200).json({ data: businesses });
+      const pageSize = +req.query.pagesize;
+      const currentpage = +req.query.page;
+      const businesses = await businessServices.getAllBusinesses(
+        pageSize,
+        currentpage
+      );
+      res.status(200).json({ results: businesses.length, data: businesses });
     } catch (error) {
       next(error);
     }

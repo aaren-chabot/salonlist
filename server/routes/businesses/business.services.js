@@ -1,8 +1,11 @@
 const Business = require('../../models/business.model');
 
-const getAllBusinesses = async () => {
+const getAllBusinesses = async (pageSize, currentPage) => {
   try {
-    return await Business.find();
+    const businessQueery = Business.find();
+    // TODO .sort('-date')
+    businessQueery.skip(pageSize * (currentPage - 1)).limit(pageSize);
+    return await businessQueery;
   } catch (error) {
     throw error;
   }
