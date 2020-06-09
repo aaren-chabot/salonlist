@@ -6,43 +6,7 @@
       </div>
       <div class="business-reviews">
         <div class="reviews-backing"></div>
-        <div class="star-rating">
-          <span
-            [ngClass]="{
-              half: business.rating.score == 0.5,
-              full: business.rating.score >= 1
-            }"
-            >&#9734;</span
-          >
-          <span
-            [ngClass]="{
-              half: business.rating.score == 1.5,
-              full: business.rating.score >= 2
-            }"
-            >&#9734;</span
-          >
-          <span
-            [ngClass]="{
-              half: business.rating.score == 2.5,
-              full: business.rating.score >= 3
-            }"
-            >&#9734;</span
-          >
-          <span
-            [ngClass]="{
-              half: business.rating.score == 3.5,
-              full: business.rating.score >= 4
-            }"
-            >&#9734;</span
-          >
-          <span
-            [ngClass]="{
-              half: business.rating.score == 4.5,
-              full: business.rating.score >= 5
-            }"
-            >&#9734;</span
-          >
-        </div>
+        <app-star-rating [starRating]="business.rating.score"></app-star-rating>
       </div>
       <img [src]="business.images.hero" alt="Picture of business" />
     </div>

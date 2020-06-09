@@ -1,6 +1,10 @@
 <div class="search-result" *ngIf="business" routerLink="">
   <div class="img" [style.background-image]="resultImg">
     <div class="featured" *ngIf="business.isFeatured">Featured</div>
+    <div class="business-reviews">
+      <div class="reviews-backing"></div>
+      <app-star-rating [starRating]="business.rating.score"></app-star-rating>
+    </div>
   </div>
   <div class="content">
     <div class="content-row">

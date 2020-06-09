@@ -1,0 +1,25 @@
+.star-rating {
+  position: relative;
+  z-index: 2;
+  padding: 3px;
+  color: gold;
+  font-size: 20px;
+  letter-spacing: 2px;
+
+  & .full:after {
+    content: '\2605';
+    color: gold;
+    position: absolute;
+    margin-left: -22px;
+    width: 20px;
+    overflow: hidden;
+  }
+  & .half:after {
+    content: '★';
+    color: gold;
+    position: absolute;
+    margin-left: -22px;
+    width: 10px;
+    overflow: hidden;
+  }
+}

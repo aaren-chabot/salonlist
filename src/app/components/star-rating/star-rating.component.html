@@ -1,0 +1,37 @@
+<div class="star-rating" *ngIf="starRating">
+  <span
+    [ngClass]="{
+      half: starRating == 0.5,
+      full: starRating >= 1
+    }"
+    >&#9734;</span
+  >
+  <span
+    [ngClass]="{
+      half: starRating == 1.5,
+      full: starRating >= 2
+    }"
+    >&#9734;</span
+  >
+  <span
+    [ngClass]="{
+      half: starRating == 2.5,
+      full: starRating >= 3
+    }"
+    >&#9734;</span
+  >
+  <span
+    [ngClass]="{
+      half: starRating == 3.5,
+      full: starRating >= 4
+    }"
+    >&#9734;</span
+  >
+  <span
+    [ngClass]="{
+      half: starRating == 4.5,
+      full: starRating >= 5
+    }"
+    >&#9734;</span
+  >
+</div>

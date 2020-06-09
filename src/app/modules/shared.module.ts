@@ -13,6 +13,7 @@ import { RecommendedBusinessesComponent } from '@components/recommended-business
 import { SearchComponent } from '@components/search/search.component';
 import { SearchResultComponent } from '@components/search-result/search-result.component';
 import { SearchFilterComponent } from '@components/search-filter/search-filter.component';
+import { StarRatingComponent } from '@components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchFilterComponent } from '@components/search-filter/search-filter.c
     RecommendedBusinessesComponent,
     SearchComponent,
     SearchResultComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    StarRatingComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { SearchFilterComponent } from '@components/search-filter/search-filter.c
     RecommendedBusinessesComponent,
     SearchComponent,
     SearchResultComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    StarRatingComponent
   ]
 })
 export class SharedModule {}
