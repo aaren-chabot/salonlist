@@ -1,17 +1,30 @@
 <div class="login-page">
   <div class="form">
     <h1 class="heading">SIGN IN</h1>
-    <form #login="ngForm" (ngSubmit)="handleSubmit(login)">
-      <input type="text" name="email" id="email" placeholder="Email" />
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubmit(loginForm)">
+      <input
+        type="text"
+        name="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email"
+      />
       <input
         type="password"
         name="password"
         id="password"
+        formControlName="password"
         placeholder="Password"
       />
       <div class="remain-logged">
         <label class="label">
-          <input class="checkbox" type="checkbox" />
+          <input
+            class="checkbox"
+            type="checkbox"
+            formControlName="cacheLogin"
+            name="cacheLogin"
+            id="cacheLogin"
+          />
           <span class="checkbox-text">
             <span class="checkbox-check">
               <app-icon icon="check"></app-icon>
