@@ -11,40 +11,38 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () =>
-      import('@modules/login.module').then((m) => m.LoginModule)
+    loadChildren: async () =>
+      (await import('@modules/login.module')).LoginModule
   },
   {
     path: 'register',
-    loadChildren: () =>
-      import('@modules/register.module').then((m) => m.RegisterModule)
+    loadChildren: async () =>
+      (await import('@modules/register.module')).RegisterModule
   },
   {
     path: 'forgot-password',
-    loadChildren: () =>
-      import('@modules/forgot-password.module').then(
-        (m) => m.ForgotPasswordModule
-      )
+    loadChildren: async () =>
+      (await import('@modules/forgot-password.module')).ForgotPasswordModule
   },
   {
     path: 'search',
-    loadChildren: () =>
-      import('@modules/search.module').then((m) => m.SearchModule)
+    loadChildren: async () =>
+      (await import('@modules/search.module')).SearchModule
   },
   {
     path: 'business',
-    loadChildren: () =>
-      import('@modules/business.module').then((m) => m.BusinessModule)
+    loadChildren: async () =>
+      (await import('@modules/business.module')).BusinessModule
   },
   {
     path: 'barbers',
-    loadChildren: () =>
-      import('@modules/barbers.module').then((m) => m.BarbersModule)
+    loadChildren: async () =>
+      (await import('@modules/barbers.module')).BarbersModule
   },
   {
     path: 'salons',
-    loadChildren: () =>
-      import('@modules/salons.module').then((m) => m.SalonsModule)
+    loadChildren: async () =>
+      (await import('@modules/salons.module')).SalonsModule
   },
   {
     path: '404',
