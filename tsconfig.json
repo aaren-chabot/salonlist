@@ -18,7 +18,8 @@
       "@modules/*": ["app/modules/*"],
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
-      "@interfaces/*": ["app/interfaces/*"]
+      "@interfaces/*": ["app/interfaces/*"],
+      "@util/*": ["app/util/*"]
     }
   },
   "angularCompilerOptions": {

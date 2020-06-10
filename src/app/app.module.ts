@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '@modules/shared.module';
+import { SharedUtilsModule } from '@modules/shared-utils.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,13 @@ import { NotFoundPageComponent } from '@pages/not-found/not-found.component';
     HomePageComponent,
     NotFoundPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    SharedUtilsModule,
+    HttpClientModule
+  ],
   exports: [],
   providers: [],
   bootstrap: [AppComponent]
