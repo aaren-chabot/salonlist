@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "kill": "lsof -P | grep ':5000' | awk '{print $2}' | xargs kill -9",
+    "start:dev": "npm run kill && nodemon app.js"
   },
   "author": "Aaren Chabot",
   "email": "chabot.aaren@gmail.com",

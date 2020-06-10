@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run start:server\" \"npm run start:app\"",
+    "start": "lsof -P | grep ':5000' | awk '{print $2}' | xargs kill -9 && concurrently \"npm run start:server\" \"npm run start:app\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:server": "cd ./server && nodemon app.js",
+    "start:server": "cd ./server && npm run start:dev",
     "start:app": "ng serve"
   },
   "private": true,
